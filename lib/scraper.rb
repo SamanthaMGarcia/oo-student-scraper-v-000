@@ -23,7 +23,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     page = Nokogiri::HTML(open(profile_url))
     profiles = []
-    doc.css("div.roster-cards-container").each do |card|
+    page.css("div.roster-cards-container").each do |card|
     card.css(".student-card a").each do |student|
         student_profile_link = "#{student.attr('href')}"
         student_location = student.css('.student-location').text

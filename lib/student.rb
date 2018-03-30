@@ -8,6 +8,8 @@ class Student
     student_hash.each do |attibute, value|
       self.send 
       puts ("#{attribute}=", value)
+    end
+    @@all << self
       
       
   end
